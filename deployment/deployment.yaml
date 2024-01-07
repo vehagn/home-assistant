@@ -26,7 +26,13 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            - name: hass-configuration
+              mountPath: /config/configuration.yaml
+              subPath: configuration.yaml
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: hass-config-pvc
+        - name: hass-configuration
+          configMap:
+            name: hass-configuration
