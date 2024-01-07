@@ -13,3 +13,11 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.0.0.0/24
+
+sensor:
+  - platform: entur_public_transport
+    name: Transport
+    expand_platforms: true
+    show_on_map: true
+    stop_ids: # Found at https://stoppested.entur.org/
+      - 'NSR:StopPlace:62091' # Jernbanetorget
